@@ -1,3 +1,4 @@
+import { PostsProvider } from '@/context/postContext'
 import '../styles/globals.css'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import { DM_Sans, DM_Serif_Display } from 'next/font/google'
@@ -7,18 +8,26 @@ const dmSans = DM_Sans({
   subsets: ['latin'],
   variable: '--font-dm-sans',
 })
+
 const dmSerifDisplay = DM_Serif_Display({
   weight: ['400'],
   subsets: ['latin'],
   variable: '--font-dm-serif',
 })
-export default function App({ Component, pageProps }) {
+
+function MyApp({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => page)
   return (
     <UserProvider>
-      <main className={`${dmSans.variable} ${dmSerifDisplay} font-body`}>
-        {getLayout(<Component {...pageProps} />, pageProps)}
-      </main>
+      <PostsProvider>
+        <main
+          className={`${dmSans.variable} ${dmSerifDisplay.variable} font-body`}
+        >
+          {getLayout(<Component {...pageProps} />, pageProps)}
+        </main>
+      </PostsProvider>
     </UserProvider>
   )
 }
+
+export default MyApp
