@@ -3,9 +3,11 @@ lockfileVersion: 5.4
 specifiers:
   '@auth0/nextjs-auth0': ^2.4.0
   '@tailwindcss/typography': ^0.5.9
+  '@webdeveducation/next-verify-stripe': ^1.0.1
   autoprefixer: 10.4.14
   eslint: 8.38.0
   eslint-config-next: 13.3.0
+  micro-cors: ^0.1.1
   mongodb: ^5.2.0
   next: 13.3.0
   openai: ^3.2.1
@@ -17,13 +19,16 @@ specifiers:
   react-dom: 18.2.0
   react-icons: ^4.8.0
   sharp: ^0.32.0
+  stripe: ^12.2.0
   tailwindcss: 3.3.1
   uuid: ^9.0.0
 
 dependencies:
   '@auth0/nextjs-auth0': 2.4.0_next@13.3.0
+  '@webdeveducation/next-verify-stripe': 1.0.1
   eslint: 8.38.0
   eslint-config-next: 13.3.0_eslint@8.38.0
+  micro-cors: 0.1.1
   mongodb: 5.2.0
   next: 13.3.0_biqbaboplfbrettd7655fr4n2y
   openai: 3.2.1
@@ -33,6 +38,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
   sharp: 0.32.0
+  stripe: 12.2.0
   tailwindcss: 3.3.1_postcss@8.4.22
   uuid: 9.0.0
 
@@ -404,6 +410,10 @@ packages:
     dependencies:
       '@typescript-eslint/types': 5.58.0
       eslint-visitor-keys: 3.4.0
+    dev: false
+
+  /@webdeveducation/next-verify-stripe/1.0.1:
+    resolution: {integrity: sha512-iVvDQ1un0T86nl6Tfei4IXAWj35PF0gXo/XH5VCSHetqYOTT3U/2cTCYi2p7+B2TK6vO9Pqvo7sVaVmLJBgR+g==}
     dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.2:
@@ -1886,6 +1896,11 @@ packages:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
 
+  /micro-cors/0.1.1:
+    resolution: {integrity: sha512-6WqIahA5sbQR1Gjexp1VuWGFDKbZZleJb/gy1khNGk18a6iN1FdTcr3Q8twaxkV5H94RjxIBjirYbWCehpMBFw==}
+    engines: {node: '>=6'}
+    dev: false
+
   /micromatch/4.0.5:
     resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
     engines: {node: '>=8.6'}
@@ -2421,6 +2436,13 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
+  /qs/6.11.1:
+    resolution: {integrity: sha512-0wsrzgTz/kAVIeuxSjnpGC56rzYtr6JT/2BwEvMaPhFIoYa1aGO8LbzuU1R0uUYQkLpWBTOj0l/CLAJB64J6nQ==}
+    engines: {node: '>=0.6'}
+    dependencies:
+      side-channel: 1.0.4
+    dev: false
+
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
@@ -2750,6 +2772,14 @@ packages:
   /strip-json-comments/3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
     engines: {node: '>=8'}
+    dev: false
+
+  /stripe/12.2.0:
+    resolution: {integrity: sha512-OVqmUuHvDL8z9pBhrhL0HkjPduBM6x1KJCSnVC8R3m+nWpTb7xRpqNuETEkvkYrek1QpfzbcS+UlOCTpv7SC/w==}
+    engines: {node: '>=12.*'}
+    dependencies:
+      '@types/node': 18.15.11
+      qs: 6.11.1
     dev: false
 
   /styled-jsx/5.1.1_react@18.2.0:
