@@ -13,11 +13,15 @@ export default function TokenTopup() {
   }
 
   return (
-    <div>
-      <h1>this is the token topup</h1>
-      <button className='btn' onClick={handleClick}>
-        Add tokens
-      </button>
+    <div className='flex justify-center items-center'>
+      <div>
+        <h3 className='text-center'>
+          For generate a SEO-friendly AI-based blog post You must have tokens
+        </h3>
+        <button className='btn w-[200px] mx-auto' onClick={handleClick}>
+          Add tokens
+        </button>
+      </div>
     </div>
   )
 }

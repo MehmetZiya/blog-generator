@@ -4,12 +4,11 @@ import { ObjectId } from 'mongodb'
 import { useRouter } from 'next/router'
 import { useContext, useState } from 'react'
 import { AppLayout } from '../../components/AppLayout'
-import PostsContext from '../../context/postsContext'
 import clientPromise from '../../lib/mongodb'
 import { getAppProps } from '../../utils/getAppProps'
+import PostsContext from '@/context/postContext'
 
 export default function Post(props) {
-  console.log('PROPS: ', props)
   const router = useRouter()
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false)
   const { deletePost } = useContext(PostsContext)
@@ -46,8 +45,11 @@ export default function Post(props) {
         </div>
         <div className='flex flex-wrap pt-2 gap-1'>
           {props.keywords.split(',').map((keyword, i) => (
-            <div key={i} className='p-2 rounded-full bg-slate-800 text-white'>
-              <FaHashtag /> {keyword}
+            <div
+              key={i}
+              className='py-2 px-4 rounded-full bg-slate-800 text-white'
+            >
+              <FaHashtag className='inline' /> {keyword}
             </div>
           ))}
         </div>
