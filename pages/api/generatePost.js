@@ -33,7 +33,7 @@ export default withApiAuthRequired(async function handler(req, res) {
   }
 
   const postContentResult = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4o',
     messages: [
       {
         role: 'system',
@@ -52,7 +52,7 @@ export default withApiAuthRequired(async function handler(req, res) {
   const postContent = postContentResult.data.choices[0]?.message.content
 
   const titleResult = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4o',
     messages: [
       {
         role: 'system',
@@ -77,7 +77,7 @@ export default withApiAuthRequired(async function handler(req, res) {
   })
 
   const metaDescriptionResult = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4o',
     messages: [
       {
         role: 'system',
